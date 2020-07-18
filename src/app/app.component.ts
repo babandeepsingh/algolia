@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from "./data.service";
 import { stringify } from '@angular/compiler/src/util';
 import { CookieService } from 'ngx-cookie-service';
-
+import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,7 +19,11 @@ export class AppComponent {
   getSourceName = (url: string) => {
     return (url.split('//')[1].split('/')[0].split('.').splice(1).join('.'))
   }
-  constructor(private appService: DataService, private cookieService: CookieService){}
+  constructor(private appService: DataService, private cookieService: CookieService, private meta: Meta){
+    this.meta.addTag({ name: 'description', content: 'Hacker news' });
+    this.meta.addTag({ name: 'author', content: 'Babandeep Singh' });
+    this.meta.addTag({ name: 'keywords', content: 'Angular, hacker, hackers, news, hackers news, ycombinator, algolia' });
+  }
   ngOnInit() {
     this.appService
       .sendGetRequest()
