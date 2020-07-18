@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "algolia"
+    }
+  },
+  "defaultProject": "algolia",
+  "cli": {
+    "analytics": "757528c8-8fe3-4b46-b313-42b9beb076ca"
+  }
 }
