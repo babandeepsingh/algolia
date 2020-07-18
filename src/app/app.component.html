@@ -21,7 +21,8 @@
       {{hit.num_comments}}
     </div>
     <div [className]="name">
-      {{hit.points}}
+      <!-- {{hit.points}} -->
+      {{getUpVote(hit.objectID)}}
     </div>
     <div class="up-count">
       <a href="#" class="previous round" (click)="clickedUpCount(hit.objectID)">&#8249;</a>
@@ -33,5 +34,5 @@
   </div>
 </div>
 <div class="pagination" *ngFor="let paginationPage of paginationPages">
-  <button (click)="buttonPagination(paginationPage)">{{paginationPage}}</button>
+  <button (click)="buttonPagination(paginationPage)">{{paginationPage+1}}</button>
 </div>
