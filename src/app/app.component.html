@@ -1,6 +1,7 @@
 <a class="skip-main" href="#main-content">Skip to main content</a>
 
 <div class="wrapper" id="main-content">
+  <div *ngIf="loader" class="loader"></div>
   <div class="news header">
     <div class="comment-count">
       comments
@@ -20,7 +21,8 @@
       {{hit.num_comments}}
     </div>
     <div [className]="name">
-      {{hit.points}}
+      <!-- {{hit.points}} -->
+      {{getUpVote(hit.objectID)}}
     </div>
     <div class="up-count">
       <a href="#" class="previous round" (click)="clickedUpCount(hit.objectID)">&#8249;</a>
@@ -30,4 +32,7 @@
       {{ hit.title }} (<a href="{{hit.url}}">{{getSourceName(hit.url)}}</a>) by {{hit._highlightResult.author.value}}
     </div>
   </div>
+</div>
+<div class="pagination" *ngFor="let paginationPage of paginationPages">
+  <button (click)="buttonPagination(paginationPage)">{{paginationPage+1}}</button>
 </div>

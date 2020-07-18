@@ -40,5 +40,44 @@ a.skip-main:focus, a.skip-main:active {
         .news-title {
             flex-grow: 1;
         }
+        .previous {
+	        font-size: 25px;
+	        text-decoration: none;
+	        display: inline-block;
+	        transform: rotateZ(90deg);
+	        padding: 0px 10px;
+        }
+        &:nth-of-type(odd) {
+            background: #e0e0e0;
+        }
     }
+}
+.pagination {
+	display: inline-block;
+}
+
+.pagination button {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+}
+.loader {
+	border: 2px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 2px solid #3498db;
+	width: 30px;
+	height: 30px;
+	animation: spin 2s linear infinite;
+	margin: 0 auto;
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
