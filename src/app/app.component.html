@@ -15,4 +15,19 @@
       news-details
     </div>
   </div>
+  <div class="news" *ngFor="let hit of hits">
+    <div class="comment-count">
+      {{hit.num_comments}}
+    </div>
+    <div [className]="name">
+      {{hit.points}}
+    </div>
+    <div class="up-count">
+      <a href="#" class="previous round" (click)="clickedUpCount(hit.objectID)">&#8249;</a>
+    </div>
+
+    <div class="news-title">
+      {{ hit.title }} (<a href="{{hit.url}}">{{getSourceName(hit.url)}}</a>) by {{hit._highlightResult.author.value}}
+    </div>
+  </div>
 </div>
