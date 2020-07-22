@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [CookieService],
